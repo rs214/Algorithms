@@ -14,4 +14,9 @@ function reverseInt(n) {
   return n < 0 ? Number(-negative) : Number(positive);
 }
 
+function reverseInt(n) {
+  let result = n.toString().split('').reverse().join('');
+  return parseInt(result) * Math.sign(n);
+}
+
 module.exports = reverseInt;
