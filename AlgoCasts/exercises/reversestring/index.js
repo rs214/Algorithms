@@ -15,4 +15,16 @@ function reverse(str) {
   return reversedString;
 }
 
+function reverse(str) {
+  return str.split('').reverse().join('');
+}
+
+function reverse(str) {
+  let reversedString = ""
+    for (let character of str) {
+      reversedString = character + reversedString
+    }
+  return reversedString;
+}
+
 module.exports = reverse;
