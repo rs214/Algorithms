@@ -11,6 +11,24 @@
 // 4       5
 // Answer: [1, 3, 2]
 
-function levelWidth(root) {}
+//width = BF traversal
+
+function levelWidth(root) {
+  var arr = [root, 's'];
+  var result = [0];
+
+  while(arr.length > 1) {
+    const node = arr.shift();
+
+    if (node === 's') {
+      result.push(0);
+      arr.push('s');
+    } else {
+      arr.push(...node.children);
+      result[result.length - 1]++;
+    }
+  }
+  return result;
+}
 
 module.exports = levelWidth;
